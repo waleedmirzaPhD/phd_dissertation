@@ -1,0 +1,226 @@
+\newcommand{\flexocomp}{{\small{\texttt{FLEXOCOMP}}~}}
+
+% ---- Setups -----
+% \newcommand{\boldmathematics}[1]{\text{\boldmath$#1$}}
+\newcommand{\toVect}[1]{{\boldsymbol{#1}}} % Vectors
+\newcommand{\toMat}[1]{{\mathbf{#1}}}      % Matrices
+%\DeclareMathAlphabet{\mathdutchcal}{U}{dutchcal}{m}{n}
+%\SetMathAlphabet{\mathdutchcal}{bold}{U}{dutchcal}{b}{n}
+%\DeclareMathAlphabet{\mathdutchbcal}{U}{dutchcal}{b}{n}
+
+% ----- Diff ------
+\newcommand{\dd}{\text{\,}\mathrm{d}}
+\newcommand{\ds}{\mathrm{s}}
+
+% --- Variables ---
+\newcommand{\x}{\toVect{x}}
+\newcommand{\X}{\toVect{X}}
+\newcommand{\Displacement}{{\toVect{u}}}
+\newcommand{\displacement}{{\toVect{v}}}
+\newcommand{\Traction}{\toVect{t}}
+\newcommand{\HighOrderTraction}{\toVect{r}}
+\newcommand{\HighOrderJump}{\toVect{j}}
+
+\newcommand{\displacementKnown}{\overline{u}}
+\newcommand{\DisplacementKnown}{\toVect{\overline{u}}}
+\newcommand{\partialndisplacementKnown}{\overline{v}}
+\newcommand{\partialnDisplacementKnown}{\overline{\toVect{v}}}
+\newcommand{\partialxDisplacementKnown}{\overline{\partial_x(u)}}
+\newcommand{\npartialxDisplacementKnown}{\overline{n\partial_x(u)}}
+\newcommand{\TractionKnown}{\toVect{\tractionKnown}}
+\newcommand{\tractionKnown}{\overline{t}}
+\newcommand{\HighOrderTractionKnown}{\toVect{\highOrderTractionKnown}}
+\newcommand{\highOrderTractionKnown}{\overline{r}}
+\newcommand{\HighOrderJumpKnown}{\toVect{\highOrderJumpKnown}}
+\newcommand{\highOrderJumpKnown}{\overline{j}}
+\newcommand{\phiKnown}{\overline{\phi}}
+\newcommand{\wKnown}{\overline{w}}
+
+\newcommand{\n}{\toVect{n}}
+\newcommand{\m}{\toVect{m}}
+\newcommand{\tv}{\toVect{s}}
+
+% ----- NonLinear ----
+
+\newcommand{\Stress}{\toVect{\stress}}
+\newcommand{\stress}{\sigma}
+\newcommand{\E}{{\toVect{E}}}
+\newcommand{\D}{{\toVect{D}}}
+\newcommand{\F}{{\toMat{F}}}
+\newcommand{\ff}{{\widetilde{F}}}
+\newcommand{\FF}{{\toMat{\ff}}}
+\newcommand{\fff}{{\check{F}}}
+\newcommand{\FFF}{{\toMat{\fff}}}
+\newcommand{\C}{{\toMat{C}}}
+\newcommand{\B}{{\toMat{B}}}
+\newcommand{\CC}{{\widetilde{\toMat{C}}}}
+\newcommand{\cc}{{\widetilde{C}}}
+\newcommand{\CCC}{{\check{\toMat{C}}}}
+\newcommand{\ccc}{{\check{C}}}
+\newcommand{\GG}{\widetilde{\mathfrak{E}}}
+
+\newcommand{\Pstar}{{\toVect{p}}^{\textbf{r}}}
+\newcommand{\pstar}{{p^\text{r}}}
+\renewcommand{\P}{{\toVect{P}}}
+\newcommand{\p}{{\toVect{p}}}
+\newcommand{\e}{{\toVect{e}}}
+\renewcommand{\d}{{\toVect{d}}}
+
+\renewcommand{\S}{{\toMat{S}}}
+\newcommand{\SMW}{{\toMat{S}^\text{Maxwell}}}
+\newcommand{\SFL}{{\toMat{S}^\text{Flexo}}}
+\newcommand{\Smw}{{{S}^\text{Maxwell}}}
+\newcommand{\smw}{{\boldsymbol{\sigma}^\text{Maxwell}}}
+\newcommand{\SP}{{\widehat{\toMat{S}}}}
+\renewcommand{\sp}{{\widehat{S}}}
+\renewcommand{\SS}{{\widetilde{\toMat{S}}}}
+\renewcommand{\ss}{{\widetilde{S}}}
+
+\newcommand{\coup}{{\mathds{C}}}
+\newcommand{\ccoup}{{\widetilde{\mathds{C}}}}
+
+% ---- Tensors ----
+\newcommand{\StrainKnown}{\toVect{\strainKnown}}
+\newcommand{\strainKnown}{\overline\strain}
+\newcommand{\Strain}{\toVect{\strain}}
+\newcommand{\strain}{\varepsilon}
+\newcommand{\Pol}{\toVect{P}}
+\newcommand{\CauchyStress}{\toVect{\cauchyStress}}
+\newcommand{\cauchyStress}{\widehat{\sigma}}
+\newcommand{\HyperStress}{\toVect{\hyperStress}}
+\newcommand{\hyperStress}{\widetilde{\sigma}}
+\newcommand{\ElectricDisp}{\toVect{\electricDisp}}
+\newcommand{\electricDisp}{\widehat{D}}
+\newcommand{\hyperelectricDisp}{\widetilde{D}}
+\newcommand{\hyperElectricDisp}{\toVect{\hyperelectricDisp}}
+\newcommand{\ShapeOperator}{\toMat{\shapeOperator}}
+\newcommand{\shapeOperator}{S}
+\newcommand{\Projector}{\toMat{\projector}}
+\newcommand{\projector}{P}
+\newcommand{\curvatureProjector}{\tilde{N}}
+\newcommand{\CurvatureProjector}{\toMat{\curvatureProjector}}
+
+% --- Material ----
+\newcommand{\Piezo}{\toVect{\piezo}}
+\newcommand{\piezo}{e}
+\newcommand{\Flexo}{\toVect{\flexo}}
+\newcommand{\flexo}{\mu}
+\newcommand{\Flexocoup}{\toVect{\flexocoup}}
+\newcommand{\flexocoup}{f}
+\newcommand{\Dielec}{\toVect{\dielec}}
+\newcommand{\dielec}{\kappa}
+\newcommand{\Elast}{\toMat{c}}
+\newcommand{\elast}{{c}}
+\newcommand{\StrGr}{\toMat{\strGr}}
+\newcommand{\strGr}{h}
+\newcommand{\grdie}{M}
+\newcommand{\Grdie}{\toMat{\grdie}}
+
+% --- Quantum ---
+\newcommand{\hamiltonian}{\widehat{H}}
+\newcommand{\planck}{\hslash}
+\newcommand{\radialpolarization}{{p_\text{r}}}
+\newcommand{\bohr}{\textrm{~bohr}}
+
+% --- Operators ---
+\newcommand{\divergence}{\nabla\text{\!}\cdot\text{\!}}
+\newcommand{\gradient}{\nabla}
+\newcommand{\symmetricGradient}{\nabla^\text{sym}}
+\newcommand{\surfaceGradient}{\nabla^{S}}
+\newcommand{\normalGradient}{\nabla^{N}}
+\newcommand{\surfaceDivergence}{\nabla^S\text{\!}\text{\!}\cdot\text{\!}}
+\newcommand{\normalDivergence}{\nabla^N\text{\!}\text{\!}\cdot\text{\!}}
+\newcommand{\jump}[2][]{\ifstrempty{#1}
+    {{\mathchoice
+    {{\left[\mkern-3mu{\left[ #2 \right]}\mkern-3mu\right]}} % \displaystyle
+    {{\left[\!\left[ #2 \right]\!\right]}} % \textstyle
+    {{\left[\!\left[ #2 \right]\!\right]}} % \scriptstyle
+    {{\left[\!\left[ #2 \right]\!\right]}} % \scriptscriptstyle
+    }}
+    {{\mathchoice
+    {{\left[\mkern-3mu{\left[ #2 \right]}\mkern-3mu\right]}_{#1}} % \displaystyle
+    {{\left[\!\left[ #2 \right]\!\right]}_{#1}} % \textstyle
+    {{\left[\!\left[ #2 \right]\!\right]}_{#1}} % \scriptstyle
+    {{\left[\!\left[ #2 \right]\!\right]}_{#1}} % \scriptscriptstyle
+    }}
+    }
+\newcommand{\mean}[1]{\left\{\!\!\left\{ #1 \right\}\!\!\right\}}
+\DeclareMathOperator{\Trace}{Tr}
+\newcommand{\trace}[1]{\Trace(\,#1\,)}
+\newcommand{\Log}[1]{\log(\,#1\,)}
+\newcommand{\curl}{\nabla\times}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\dist}{dist}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+\DeclareMathOperator*{\Supp}{supp}
+\DeclareMathOperator*{\SYMM}{symm}
+\newcommand{\symm}[2][]{\ifstrempty{#1}
+	{\SYMM\left(#2\right)}
+	{\SYMM_{#1}\left(#2\right)}}
+\newcommand{\id}{\updelta}
+\newcommand{\supp}[1]{\Supp\Big(#1\Big)}
+\newcommand{\var}[2][]{\ifstrempty{#1}
+	{{\delta #2}}
+	{{\delta\hspace{-0.1em}_{#1} #2}}}
+\newcommand{\vvar}[2][]{\ifstrempty{#1}
+	{{\delta^2 #2}}
+	{{\delta^2\hspace{-0.1em}_{#1} #2}}}
+\newcommand{\norm}[1]{{\left\lVert #1 \right\rVert}}
+
+% ----- Text ------
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\eq}{Eq.~}
+\newcommand{\eqs}{Eqs.~}
+\newcommand{\fig}{Fig.~}
+\newcommand{\figs}{Figs.~}
+\newcommand{\etal}{et~al.~}
+\newcommand{\ie}{i.e.~}
+\newcommand{\eg}{e.g.~}
+\newcommand{\cf}{cf.~}
+\renewcommand{\sec}{Section~}
+
+% ----- Units ------
+\DeclareSIUnit \uJ  { \micro \joule }
+\sisetup{product-units = power,mode = math,per-mode=symbol}
+\newcommand{\um}{~\si{\um}}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+
+
+
+
+
+\newcommand\dcirclearrowleft{\mathrel{%
+  \ensurestackMath{\stackengine{0pt}{\circlearrowleft}{\cdot}{O}{c}{F}{T}{L}}%
+}}
+\newcommand{\marino}[1]{\textcolor[rgb]{0.7,0.2,0.5}{#1}}
+\newcommand{\torres}[1]{\textcolor[rgb]{0.2,0.7,0.5}{#1}}
+\newcommand{\mirzawd}[1]{\textcolor[rgb]{0, 0.125, 0.376}{#1}}
+\newcommand{\tensorm}{%
+	% Uncomment below to adjust the gap between the dots
+	%\setstackgap{S}{0.6ex}%
+	\mathrel{\Shortstack{{.} {.} {.}}}}
+\def\onedot{$\mathsurround0pt\ldotp$}
+\def\cddot{% two dots stacked vertically
+	\mathbin{\vcenter{\baselineskip.67ex
+			\hbox{\onedot}\hbox{\onedot}}%
+}}%
+\def\cdddot#1{% three dots 
+	\mathbin{\vcenter{\baselineskip.67ex
+			\hbox{\onedot}\hbox{\onedot}\hbox{\onedot}%
+	}}%
+}
+\makeindex
+\makeatletter	
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\makeatletter %% <- make @ usable in macro names
+\newcommand*\superimpose[2]{%
+	\ooalign{$\m@th#1\@firstoftwo#2$\cr
+		\hidewidth$\m@th#1\@secondoftwo#2$\hidewidth}%
+}
+\makeatother
+\newcommand*\threedotsord{\,\mathpalette\superimpose{{\mathop:}{\cdot}}\,}
+\renewcommand\thesection{\arabic{section}}
+\newcommand{\mi}{\mathrm{i}} %% roman "i"
+

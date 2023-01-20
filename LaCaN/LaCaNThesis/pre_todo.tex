@@ -1,0 +1,31 @@
+\usepackage{xargs} % Use more than one optional parameter in a new commands
+\usepackage[
+colorinlistoftodos
+,prependcaption
+%,textsize=tiny
+]{todonotes}
+
+\newcommandx{\todoModify}[2][1=]{\todo[
+   linecolor=red,
+   backgroundcolor=red!25,
+   bordercolor=red,
+   #1]{#2}}
+\newcommandx{\todoCheck}[2][1=]{\todo[
+    linecolor=blue,
+    backgroundcolor=blue!25,
+    bordercolor=blue
+    ,#1]{#2}}
+\newcommandx{\todoAdd}[2][1=]{\todo[
+    linecolor=Olive,
+    backgroundcolor=Olive!25,
+    bordercolor=Olive,
+    #1]{#2}}
+\newcommandx{\todoDelete}[2][1=]{\todo[
+    linecolor=Plum,
+    backgroundcolor=Plum!25,
+    bordercolor=Plum,#1]{#2}}
+\newcommand{\todoFigure}[1]{\missingfigure[figwidth=9cm]{#1}}
+
+
+
+\graphicspath{ {./LaCaN/figure/} }

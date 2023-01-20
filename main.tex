@@ -1,0 +1,104 @@
+\documentclass[11pt, final, a4paper, twoside, openright]{book}
+\usepackage{LaCaN/LaCaNThesis/LaCaNThesis}
+
+% --------------------------------------------------------------------
+% Formato de tesis del grupo LaCaN
+% por Marino Arroyo, Enero de 2006
+% modified by Eloi Ruiz
+% modified by David Codony (2020)
+% modified by Waleed Mirza and Marino Arroyo (2022)
+%----------------------------------------------------------------------
+
+
+\newtcolorbox{mybox}[3][]
+{
+	colframe = #2!25,
+	colback  = #2!10,
+	coltitle = #2!20!black,  
+	title    = {#3},
+	#1,
+}
+
+
+\begin{document}
+\InitializeThesis
+
+%%% Title Page %%%
+\include{LaCaN/0000-Preliminary/0001-Cover} 
+\include{LaCaN/0000-Preliminary/0002-TitlePage}
+\include{LaCaN/0000-Preliminary/0003-InitialCite}
+
+%%% Preliminary %%%
+\frontmatter
+\include{LaCaN/0000-Preliminary/0004-Abstract}
+\include{LaCaN/0000-Preliminary/0005-Acknowl}
+\include{LaCaN/0000-Preliminary/0006-Contents}
+
+
+%%% Body %%%
+\mainmatter
+%\input{LaCaN/0100-Introduction/0100}
+\renewcommand{\thesection}{1.\arabic{section}}
+\chapter{Introduction and motivation} \label{chap_1}
+\input{LaCaN/chap_1/chap_1}
+
+\renewcommand{\thesection}{2.\arabic{section}}
+\part{Active self-organization of nematic architectures on a flat surface}
+\chapter{A variational framework for 2D active nematic gels} \label{chap_2}
+\input{LaCaN/chap_2/chap_2}
+
+\renewcommand{\thesection}{3.\arabic{section}}
+\chapter{Computational framework for 2D active nematic gels} \label{chap_3}
+\input{LaCaN/chap_3/chap_3}
+
+\renewcommand{\thesection}{4.\arabic{section}}
+\chapter{Theory of active self-organization of dense nematic structures in actin gels} \label{chap_4}
+\input{LaCaN/chap_4/chap_4}
+
+\part{Active self-organization of a nematic gel on a deformable curved surface} 
+
+\renewcommand{\thesection}{5.\arabic{section}}
+\chapter{Introduction and  motivation}  \label{chap_6}
+\input{LaCaN/chap_5/chap_5}
+
+\renewcommand{\thesection}{6.\arabic{section}}
+\chapter{Theoretical description of an active nematic surface} \label{chap_7}
+\input{LaCaN/chap_6/chap_6}
+
+\renewcommand{\thesection}{7.\arabic{section}}
+\chapter{Reshaping a cortical surface by self-organizing dense nematic structures} \label{chap_8}
+\input{LaCaN/chap_7/chap_7}
+
+\renewcommand{\thesection}{8.\arabic{section}}
+\chapter{Active shape changes in inextensible liquid crystalline vesicles}	\label{chap_9}
+\input{LaCaN/chap_8/chap_8}
+
+\renewcommand{\thesection}{9.\arabic{section}}
+\chapter{Conclusions and future work}	\label{chap_10}
+\input{LaCaN/chap_9/chap_9}
+
+%
+%
+\begin{appendices}
+	\renewcommand{\thesection}{A.\arabic{section}}
+	\chapter{Active self-organization of nematic architecture on a flat surface }   \label{appendix_1}
+	\input{LaCaN/append_A/append_A}
+	
+	\renewcommand{\thesection}{B.\arabic{section}}
+	\chapter{Active self-organization of a nematic gel on a deformable curved surface} \label{appendix_2}
+	\input{LaCaN/append_B/append_B} 
+	
+	\renewcommand{\thesection}{C.\arabic{section}}
+    \chapter{Movie captions} \label{appendix_3}
+	\input{LaCaN/append_C/append_C}  
+	 
+\end{appendices}
+
+%%% Backmatter %%%
+\backmatter
+\Bibliography{LaCaN/9800-Bibliography/9800-Bibliography}
+
+\end{document}
+
+
+

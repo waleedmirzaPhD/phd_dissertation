@@ -1,0 +1,203 @@
+\section{Covariant derivative} \label{velocity_gradient}
+
+We denote by $\nabla^{\rm 3D} \bm{V}$ the three-dimensional gradient of a vector $\bm{V}$. In general curvilinear coordinates, the gradient is given by
+\begin{equation}
+	\nabla^{\rm 3D}_\beta V^\alpha = \partial_\beta V^\alpha + \bar{\Gamma}^\alpha_{\beta\gamma} V^\gamma.
+\end{equation} 
+where $\bar{\Gamma}^\alpha_{\beta\gamma} = \bm{e}^\alpha \cdot \partial_\beta \bm{e}_\gamma$. We are interested in the projection of this derivative onto $A$, which we call $\nabla \bm{V}$
+\begin{equation}
+	\nabla \bm{V} = \nabla^{\rm 3D} \bm{V}\,\mathbb{P}.
+\end{equation} 
+where $\mathbb{P}$ is the projector onto $A$. To calculate $\nabla\bm{V}$, we introduce a basis of Cartesian space on $A$ given by $\bm{e}_1$, $\bm{e}_2$ and $\bm{N}$ (the two tangent vectors to $A$ and the normal). In this basis,
+\begin{equation}
+	\nabla_a V^\alpha = \nabla^{\rm 3D}_a V^\alpha .
+\end{equation} 
+and we have 
+\begin{equation}
+	\bar{\Gamma}^a_{bc} = \Gamma^a_{bc},\quad \bar{\Gamma}^3_{ab} = -k_{ab},\quad \bar{\Gamma}^a_{3b} = k^a_b,\qquad \Gamma^3_{3a}=\Gamma^3_{a3}=\Gamma^a_{33}=\Gamma^3_{33} = 0.
+\end{equation}
+We split the calculation of $\nabla\bm{V}$ into its tangential and normal components. The tangential part leads to
+\begin{equation}
+	\nabla^{\rm 3D}_b v^a =  \partial_b v^a + \bar{\Gamma}^a_{b\gamma} V^\gamma = \partial_b v^a + \bar{\Gamma}^a_{bc} v^c + \bar{\Gamma}^a_{b3} v_n = \nabla_b v^a + k^a_b v_n.
+\end{equation}
+Similarly,
+\begin{equation}
+	\nabla^{\rm 3D}_b v_n =  \partial_b v^3 + \bar{\Gamma}^3_{b\gamma} V^\gamma = \partial_b v_n + \bar{\Gamma}^3_{bc} v^c = \nabla_b v_n - k_{bc} v^c.
+\end{equation}
+Putting these results together,
+\begin{equation}
+	\nabla \bm{V} = \left(\nabla_b v^a+v_n k_b{}^a \right) \bm{e}_a \otimes \bm{e}^b + \left(\nabla_a v_n - k_{ab} v^b \right) \bm{n} \otimes \bm{e}^a.
+\end{equation}
+In the case $v_n=0$, i.e. for a tangent vector, this definition does not coincide with the usual covariant derivative. To get the covariant derivative, we need to project once more to eliminate the normal terms
+\begin{equation}
+\nabla\bm{v} = \mathbb{P}\,\nabla^{\rm 3D} \bm{V}\,\mathbb{P} = \nabla\bm{v}.
+\end{equation}
+
+\section{Lie derivative of curvature tensor} \label{curvature_tensor}
+The Lie derivative of curvature tensor is given by \cite{capovilla2002, salbreux2017}
+\begin{equation} \label{append_1_II}
+	\mathcal{L}_v k_{ab} = -\nabla_a \nabla_b v_N + k_{ac} \nabla_b v^c + k_{bc}\nabla_a v^c + \nabla_a k_{bc}v^c + v_Nk_{ac}k^{c}_{~b},
+\end{equation}
+which can be related to $\bm{\zeta}$ and $\bm{d}$ as
+\begin{align} \label{append_2_II}
+	\mathcal{L}_v k_{ab}  & = -\frac{1}{2}\nabla_a \bigg(\nabla_b v_N -  k_{bc} v^c\bigg) - \frac{1}{2}\nabla_b \bigg(\nabla_a v_N -  k_{ac} v^c\bigg) + \frac{1}{2}\bigg( \frac{\nabla_b v^c + \nabla^c v_b}{2} + v_Nk_{~b}^c \bigg)k_{ac}   \nonumber \\ & + \frac{1}{2}\bigg( \frac{\nabla_a v^c +   \nabla^c v_a}{2} +v_N k^{c}_{~a} \bigg)k_{bc} + \frac{1}{2}k_{bc}(\nabla_a v^c -   \nabla^c v_a) +  \frac{1}{2}k_{ac}(\nabla_b v^c -   \nabla^c v_b) \nonumber \\ & =
+	\frac{1}{2} \epsilon_{b}^{~c} (-\nabla_a \omega_c - k_{ac} \omega_N ) + \frac{1}{2} \epsilon_{a}^{~c} (-\nabla_b \omega_c - k_{bc}\omega_N) + \frac{1}{2}(d^c_{~b}k_{ac} +d^c_{~a}k_{bc})  \nonumber \\ & =-\frac{1}{2} \left(\zeta_{ab} +\zeta_{ba}\right)+ \frac{1}{2}\left(d^c_{~b}k_{ac} +d^c_{~a}k_{bc}\right),
+\end{align}
+where we have used $ \nabla_a k_{cb} = \nabla_b k_{ca}  = \nabla_c k_{ab}$, also known as Codazzi-Mainardi equation.
+ \iffalse 
+\section{Change in basis}
+ We derive the analytical expression of a transformation matrix $T_{[\phi,\varphi]~a}^{\quad \,\, A}$ that establish a map between the local monge basis $\partial_A \bm{\varphi}= \bm{j}_{A\{I\}} + \partial h_{\{I\}}/\partial \theta^A \bm{j}_{3\{I\}}$ and the tangent basis $\partial_a \bm{\phi}$, that is,
+ \begin{equation} \label{B.18}
+\partial_a \bm{\phi} = T_{[\phi,\varphi]~a}^{\quad \,\, A} \partial_A \bm{\varphi}.
+ \end{equation}
+After multiplying $\bm{j}_{B\{I\}}$ with the definition of $\partial_A \bm{\varphi}$ we get
+\begin{equation} \label{B.19}
+ \partial_A \bm{\varphi} \cdot \bm{j}_{B\{I\}} = \delta_{AB}
+\end{equation}
+Thus, after multiplying $\bm{j}_{B\{I\}}$ with eq.~(\ref{B.18}) and  substituting the equation above
+\begin{equation} \label{B.20}
+T_{[\phi,\varphi]~a}^{\quad \,\, A} \delta_{AB}= 	\partial_a \bm{\phi} \cdot  \bm{j}_{B\{I\}}
+\end{equation}
+
+
+\section{Auxiliary quantities in weak formulation of inextensible active nematic model}
+
+\begin{equation} \label{B.21}
+	\frac{\delta q^{[\textup{n}]}_{ab}}{\delta q_{C\{K\}}^{[\textup{n}]}} = \underset{K \in \langle E_{\{K\}} \rangle}{\mathrm{\sum}} B_{\{K\}}L_{~AB\{ K \}}^{C[n]} T_{[\phi,\varphi]~a}^{\quad \,\, A}  T_{[\phi,\varphi]~b}^{\quad \,\, B} ,
+\end{equation}
+
+
+\begin{align} \label{B.22}
+	\frac{\delta \left( \nabla_c q^{ab [\textup{n}]}\right)}{\delta q_{C\{K\}}^{[\textup{n}]}}  = & \underset{K \in \langle E_{\{K\}} \rangle}{\mathrm{\sum}}\left\{\partial_cB_{\{K\}}^{~s} T_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B} L_{~AB\{K\}}^{C[n]}  + B_{\{K\}}^{~s} \partial_cT_{[\phi,\varphi]~a}^{~~~~A} \nonumber T_{[\phi,\varphi]~b}^{~~~~B}  L_{~AB\{K\}}^{C[n]}  \right. \\
+	&\left.+\,B_{\{K\}}^{~s} T_{[\phi,\varphi]~a}^{~~~~A} \partial_cT_{[\phi,\varphi]~b}^{~~~~B}  L_{~AB\{K\}}^{C[n]}  +B_{\{K\}}^{~s}  T_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B}\partial_c  L_{~AB\{K\}}^{C[n]} \right\}, 
+\end{align}
+
+\begin{equation} \label{B.23}
+	\frac{\delta \widehat{q}_{ab}^{[\textup{n}]}}{\delta x_{C\{ K\}}^{[\textup{n}]}} =  \frac{2}{\Delta t^{[\textup{n}]}} q_{b}^{\,i[\textup{n-1}]} \frac{\delta g^{[\textup{n}]}_{ia}}{\delta  x_{C{\{K\}}}^{[\textup{n}]}} ,
+\end{equation}
+ 
+\begin{equation} \label{B.24}
+	\frac{\delta g^{[\textup{n}]}_{ab}}{\delta  x_{C{\{K\}}}^{[\textup{n}]}} = 2 \frac{\delta \bm{e}_a^{[\textup{n}]}}{\delta   x_{C\{K\}}^{[\textup{n}]}}   \cdot \bm{e}_b^{[\textup{n}]},
+\end{equation}
+
+\begin{equation} \label{B.25}
+	\frac{\delta e_{a}^{\,A[\textup{n}]}}{\delta  x_{\{K\}}^{\,C[\textup{n}]}} =  \partial_{a} B^s_{\{K\}}  \delta^{AC}.
+\end{equation}
+
+
+
+%%%%
+
+
+\begin{equation} \label{B.26}
+	\frac{ \delta S^{2[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}}  =  2\left(q^{ab[\textup{n}]}\frac{\delta q_{ab}^{[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}} + q_{ab}^{[\textup{n}]}\frac{\delta q^{ab[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}}  \right),
+\end{equation}
+
+\begin{equation} \label{B.27}
+	\frac{\delta q^{ab[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}} = g^{ae[\textup{n}]}g^{bf[\textup{n}]}  \frac{\delta q_{ef}^{[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}} + 2   \frac{\delta g^{ae[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}} g^{bf[\textup{n}]} q_{ef}^{[\textup{n}]},
+\end{equation}
+
+\begin{equation} \label{B.28}
+	\frac{\delta q_{ab}^{[\textup{n}]}}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}} =\underset{K \in \langle E_{\{K\}} \rangle }{\mathrm{\sum}} B_{\{K\}}^s\frac{\delta q_{AB\{K\}}}{\delta \bm{x}_{\{K\}}^{[\textup{n}]}} T_{[\phi,\varphi]~a}^{\quad \,\, A}  T_{[\phi,\varphi]~b}^{\quad \,\, B} ,
+\end{equation}
+
+
+\begin{equation} \label{B.29}
+	\frac{\delta q_{AB\{K\}}}{\delta \bm{x}_{\{K\}}^{[\textup{n}]}} =  B_{\{K\}}^s \partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}L_{~AB\{K\}}^{C[\textup{n}]}q_{C\{K\}} T_{[\phi,\varphi]~a}^{\quad \,\, A}  T_{[\phi,\varphi]~b}^{\quad \,\, B} ,
+\end{equation}
+
+\begin{equation} \label{B.30}
+	\partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}  L_{~11}^{1^{[\textup{n}]}} =  \frac{\partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}  g^{22^{[\textup{n}]}} g^{11^{[\textup{n}]}} - \partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}g^{11^{[\textup{n}]}}g^{22^{[\textup{n}]}}}{\left(g^{22^{[\textup{n}]}}\right)^2},
+\end{equation}
+
+\begin{equation} \label{B.31}
+	\partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}  L_{~11}^{2^{[\textup{n}]}} = 2 \frac{\partial_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{22^{[\textup{n}]}}g^{12^{[\textup{n}]}} - \partial_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{12^{[\textup{n}]}}g^{22^{[\textup{n}]}}}{\left(g^{22^{[\textup{n}]}}\right)^2}, \quad \partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}  L_{~AB\{K\}}^{C^{[\textup{n}]}} = 0 \text{ otherwise},
+\end{equation}
+
+\begin{equation} \label{B.32}
+	g^{AB^{[\textup{n}]}} = T_{[\phi,\varphi]~a}^{~~~~A{[\textup{n}]}} T_{[\phi,\varphi]~b}^{~~~~B{[\textup{n}]}}g^{ab{[\textup{n}]}} ,
+\end{equation}
+
+\begin{equation} \label{B.33}
+	\partial_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{AB{[\textup{n}]}} =  T_{[\phi,\varphi]~a}^{~~~~A{[\textup{n}]}} T_{[\phi,\varphi]~b}^{~~~~B{[\textup{n}]}} \partial_{\bm{x}_{\{K\}}^{[\textup{n}]}}g^{ab{[\textup{n}]}}.
+\end{equation}
+
+
+%%%%
+
+\begin{gather} \label{B.33}
+	\frac{\delta  \left(\partial_c q_{ab}^{[\textup{n}]}\right)}{\delta  \bm{x}_{\{K\}}^{[\textup{n}]}} =  \sum_{I\in\langle E_{\{K\}} \rangle} \left\{\partial_cB_{\{K\}}^{s} T_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} L_{~AB\{K\}}^{C[\textup{n}]} q_{C\{K\}} + B_{\{K\}}^{s} \partial_cT_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} L_{~AB\{K\}}^{C[\textup{n}]} q_{C\{K\}} \right. \nonumber +\\
+	\left.\,B_{\{K\}}^{s} T_{[\phi,\varphi]~a}^{~~~~A} \partial_cT_{[\phi,\varphi]~b}^{~~~~B} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} L_{~AB\{K\}}^{C[\textup{n}]} q_{C\{K\}} +B_{\{K\}}^{s}  T_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c  L_{~AB\{K\}}^{C[\textup{n}]}q_{C\{K\}}\right\},
+\end{gather}
+
+\begin{gather}  \label{B.34}
+	\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c  L_{~11}^1 =  -2\frac{\partial_c g^{22[\textup{n}]} g^{11[\textup{n}]} - \partial_cg^{11[\textup{n}]}g^{22[\textup{n}]}}{\left(g^{22[\textup{n}]}\right)^3} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{22[\textup{n}]} +   \frac{\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c g^{22[\textup{n}]} g^{11[\textup{n}]} - \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}  \partial_cg^{11[\textup{n}]}g^{22[\textup{n}]}}{\left(g^{22[\textup{n}]}\right)^2} + \nonumber \\ \qquad \qquad \quad
+	\frac{ \partial_c g^{22[\textup{n}]}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{11[\textup{n}]} - \partial_cg^{11[\textup{n}]}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}g^{22[\textup{n}]}}{\left(g^{22[\textup{n}]}\right)^2},
+\end{gather}
+
+
+\begin{gather}  \label{B.35}
+	\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c  L_{~11}^2 =  -4\frac{\partial_c g^{22[\textup{n}]} g^{12[\textup{n}]} - \partial_cg^{12[\textup{n}]}g^{22[\textup{n}]}}{\left(g^{22[\textup{n}]}\right)^3} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{22[\textup{n}]} +   2\frac{\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c g^{22[\textup{n}]} g^{12[\textup{n}]} - \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}  \partial_cg^{12[\textup{n}]}g^{22[\textup{n}]}}{\left(g^{22[\textup{n}]}\right)^2} + \nonumber \\ \qquad \qquad \quad
+	2\frac{ \partial_c g^{22[\textup{n}]}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{12[\textup{n}]} - \partial_cg^{12[\textup{n}]}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}g^{22[\textup{n}]}}{\left(g^{22[\textup{n}]}\right)^2},
+\end{gather}
+and otherwise $  \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c  L_{~AB\{K\}}^C = 0$.
+
+\begin{gather} \label{B.36}
+	\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_cg^{AB[\textup{n}]} = \partial_cT_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}g^{ab[\textup{n}]} + T_{[\phi,\varphi]~a}^{~~~~A} \partial_cT_{[\phi,\varphi]~b}^{~~~~B}\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}g^{ab[\textup{n}]} +  \\ \qquad \qquad \qquad T_{[\phi,\varphi]~a}^{~~~~A} T_{[\phi,\varphi]~b}^{~~~~B} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_cg^{ab[\textup{n}]}.  \nonumber
+\end{gather}
+
+
+\begin{align}  \label{B.37}
+	\delta_{\bm{x}_{\{K\}}^{[\textup{n}]}}  \partial_cg^{ab[\textup{n}]} & = -\bigg(g^{ad[\textup{n}]}g^{be[\textup{n}]}  \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} \partial_c g_{de}^{[\textup{n}]}+ g^{ad[\textup{n}]} \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{be[\textup{n}]} \partial_c g_{de}^{[\textup{n}]} +  \\ & \qquad \delta_{\bm{x}_{\{K\}}^{[\textup{n}]}} g^{ad[\textup{n}]}g^{be[\textup{n}]} \partial_c g_{de}^{[\textup{n}]}\bigg), \nonumber
+\end{align}
+
+\begin{equation}  \label{B.38}
+	\partial_cg_{ab}^{[\textup{n}]} =   \sum_{K\in\langle E_{\{k\} \}}\rangle} \left\{ \partial_c\partial_aB_{J}^s\cdot \partial_bB_{J}^s+ \partial_aB_{J}^s \cdot \partial_c\partial_bB_{J}^s \right\} d A^{[\text{n}]} .
+\end{equation}
+
+ \fi
+\section{Modal parameters used in cytoskeleton surface simulations}
+
+\begin{table}[H]
+	\resizebox{\columnwidth}{!}{\begin{tabular}{l|cccccccccc} \textbf{Model parameters} & Fig.~\ref{fig_2_III} & Fig.~\ref{fig_3_III}(a)& Fig.~\ref{fig_3_III}(b)& Fig.~\ref{fig_3_III}(c) & Fig.~\ref{fig_8_III}(a) & Fig.~\ref{fig_8_III}(b) & Fig.~\ref{fig_8.1_III} & Fig.~\ref{fig_5_III}     \\ \hline 
+			$\rho_0$ [\si{\micro \meter}]  & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 &0.2  \\ 
+			$\eta$ [\si{\pascal \second}] & $10^4$ & $10^4$ & $10^4$  & $10^4$ & $10^4$ & $10^4$ & $10^4$  & $10^4$   \\ 
+			$\ell_s$ [\si{\micro \meter]} &10 &10 &10 & 10&10 & 10 & 10 & 10  \\
+			$k_d$ [\si{\second}$^{-1}$] &0.1 & 0.1 & 0.1 & 0.1&0.1&0.1 & 0.1 & 0.1  \\
+			$D$ [\si{\micro \meter}$^2$ s$^{-1}$] & 0.04& 0.04& 0.04 & 0.04 & 0.04&0.04 & 0.04  & 0.04  \\
+			$\eta_{\rm rot} / \eta$ & 1&1 &1 & 1&1 &1 & 1 & 1 \\
+			$\beta / \eta_{\rm rot}$ & -0.2 & -0.2 & -0.2 &-0.2&-0.2&-0.2 & -0.2 & -0.2 \\
+			$a/\eta_{\rm rot}$ $[\si{\second}^{-1}]$ & 1. &1 &1&1&1&1 & 1 & 1 \\
+			$b/\eta_{\rm rot}$ $[\si{\second}^{-1}]$  &16. &16 &16&16&16&16 & 16 & 16  \\
+			$L/\eta_{\rm rot}$ $[\si{\micro \meter}^2  \si{\second}^{-1}$] & 0.01&0.01 & 0.01 &0.01&0.01& 0.01 & 0.01 & 0.01  \\
+			$h(\rho_0) \lambda_\odot^0 /(2a)$ &0.04  &0.04 & 0.04&[0.04,0.08]&0.5&0.05 & 0.5  & 0.5   \\
+			$\lambda^0/\eta [\si{\second}^{-1}]$ &0.1& 0.1&0.1& 0.1&2&2 & 2 & 2  \\
+			$\delta \lambda/ \lambda^0$   & 12.5& 10& $[12.5,17.5]$&12.5&0&0 & 0  & 0 \\
+			$\kappa$  & 1  &[0,2] & $[0,1.5]$ & [0.25,1.5]&1.5&1.5 & 0 & 0.75\\
+			$R_0 [\si{\micro \meter}]$  & 5&5 & 5& 5&5&5 &5 & 5 \\
+			$w/s$   & 0.02&0.02 & 0.02&0.02 &0&0 & 0 & 0 \\
+			$\mathcal{B}/\eta [\si{\micro \meter}^2  \si{\second}^{-1}]$   & 0.01&0.01 & 0.01&0.01 &0.01&0.01 &0.01 &0.01   \\
+			$\rho_s [\si{\micro \meter} ]$   &1&1 & 1&1 &1&$	\infty$&1 & 0.5 \\
+			\hline 
+	\end{tabular}}
+	\caption{Model parameters used in cell division and motility related numerical experiments.}
+	\label{sec_2_chap_3_tab_1}
+	\label{tab:table1}
+\end{table}
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+

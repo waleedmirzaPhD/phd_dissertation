@@ -1,0 +1,48 @@
+\RequirePackage{etoolbox}
+
+% Initialization
+\newcommand{\InitializeThesis}{
+    \input{LaCaN/0000-Preliminary/0000-Definitions}
+    \newcommand{\Author}{\myname}
+    \newcommand{\Title}{\mytitle}
+    \newcommand{\Advisor}{\myadvisor}
+    \newcommand{\Date}{\mydate}
+    \renewcommand\appendixname{\AppendixName}
+    \renewcommand\appendixpagename{\AppendixNames}
+    \renewcommand\appendixtocname{\AppendixNames}
+    \pagestyle{empty}
+}
+
+%table of contents
+\input{LaCaN/LaCaNThesis/pre_toc}
+
+%page definition
+\input{LaCaN/LaCaNThesis/pre_page}
+
+%header definition
+\input{LaCaN/LaCaNThesis/pre_header}
+
+%font type
+\input{LaCaN/LaCaNThesis/pre_font}
+
+%figure definition
+\input{LaCaN/LaCaNThesis/pre_figures}
+
+%appendix definition
+\input{LaCaN/LaCaNThesis/pre_appendix}
+
+%colors definition
+\input{LaCaN/LaCaNThesis/pre_colors}
+
+%environment definition
+\input{LaCaN/LaCaNThesis/pre_environment}
+
+%bibliography
+\input{LaCaN/LaCaNThesis/pre_bibliography}
+
+%todo
+\input{LaCaN/LaCaNThesis/pre_todo}
+
+%User-defined packages and commands
+\input{LaCaN/0000-Preliminary/0000-Commands}
+\input{LaCaN/0000-Preliminary/0000-Packages}

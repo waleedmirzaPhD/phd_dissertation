@@ -1,0 +1,46 @@
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont={color=blue}]{caption}
+\usepackage{subcaption}
+\usepackage[final]{pdfpages}
+
+%Tables
+\usepackage{multirow}
+
+%Prevent figures appearing in another section,subsection,subsubsection
+\usepackage{placeins}
+
+\let\Oldsection\section
+\let\Oldsubsection\subsection
+\let\Oldsubsubsection\subsubsection
+
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+% Figure path
+\newcommand{\figuresPath}{}
+\newcommand{\setFiguresPath}[1]
+{
+  \renewcommand{\figuresPath}{#1}
+}
+
+% Colored subfig labels
+\newcommand{\subfig}[1]{{\small{\textcolor{blue}{(#1)}}}}
+
+% New \includegraphics that looks for figures in a selected path
+\let\includegraphicsOriginal\includegraphics
+
+\newcommand{\IncludeGraphics}[2][]
+    {\includegraphicsOriginal[#1]{\figuresPath/#2}
+}
+\let\includegraphics\IncludeGraphics
+
+% New \includepdf that looks for figures in a selected path
+\let\includepdfOriginal\includepdf
+\newcommand{\Includepdf}[2][]{
+    \let\includegraphics\includegraphicsOriginal
+    \includepdfOriginal[#1]{\figuresPath/#2}
+    \let\includegraphics\IncludeGraphics
+}
+\let\includepdf\Includepdf

@@ -1,0 +1,15 @@
+\usepackage[authoryear,comma,sort&compress]{natbib}
+%\bibliographystyle{LaCaN/9800-Bibliography/apsrev4-1-modified}
+\bibliographystyle{LaCaN/9800-Bibliography/apsrev4-1-modified_sorted}
+%\usepackage{doi}%<----------
+
+\newcommand\Bibliography[1]{
+\begin{singlespace}
+\fancyhead[LO,RE]{\bibname}
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{#1}
+\end{singlespace}
+}
+
+\let\cite\citep

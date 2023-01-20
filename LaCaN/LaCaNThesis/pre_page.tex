@@ -1,0 +1,64 @@
+%\usepackage[bottom]{footmisc}
+\raggedbottom
+
+\usepackage[a4paper
+%,showframe
+%
+%,width=15.3cm
+,inner=3.5cm
+,outer=3cm
+%
+%,height=21.0cm
+,top=5.0cm 
+,foot=3.9cm
+%
+,head=15pt
+,headsep=1.3cm
+%
+,foot=25pt
+%
+,marginpar=2.7cm
+]{geometry}
+
+\usepackage{setspace}
+\setstretch{1.1}
+\setlength{\parindent}{15pt}
+
+
+% The following four numbers are to make TeX more likely to put figures on the
+% same page rather than on a separate figures page. Can tinker with these, but
+% make sure floatpagefraction<topfraction.
+% Values recommended by the web page I found were 0.15, 0.85, 0.65, 0.60. The
+% default values are 0.2, 0.7, 0.3, 0.5
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.3}
+\renewcommand{\floatpagefraction}{0.85}
+
+\makeatletter
+
+\def\cleardoublepage
+{
+  \clearpage
+  \if@twoside
+    \ifodd
+      \c@page
+    \else
+      \hbox{}
+      \vspace*{\fill}
+      \begin{center}
+        %\rotatebox{54.73}{\Huge \sc{This Page Intentionally Left Blank}}
+      \end{center}
+      \vspace{\fill}
+      \thispagestyle{empty}
+      \newpage
+      \if@twocolumn
+        \hbox{}
+        \newpage
+      \fi
+    \fi
+  \fi
+}
+
+
+\makeatother

@@ -1,0 +1,84 @@
+\usepackage{appendix}
+
+% %Include Paper
+% \newcommand\Paper[4][25.5mm]{
+%     \chapter{#2 \label{#4}}
+%     \thispagestyle{empty}
+%     \cleardoublepage
+%     \includePaper[#1]{Papers/#3}
+%     \cleardoublepage
+%     }
+
+% \newlength{\myPDFoffset}
+
+% \newcommand\includePaper[2][25.5mm]{
+%     \setlength{\myPDFoffset}{#1}
+%     \fancyheadoffset[r]{-\myPDFoffset}
+%     \fancyheadoffset[l]{+\myPDFoffset}
+%     \addtolength{\hoffset}{+\myPDFoffset}
+%     \includepdf[
+%     clip, trim={15mm 25mm 15mm 25mm} 
+%     ,pages=-
+%     ,fitpaper
+%     ,templatesize={210mm}{297mm}
+%     %,noautoscale
+%     ,scale=0.96
+%     ,offset=4 -100
+%     %,frame
+%     ,pagecommand={
+%     \pagestyle{fancy}
+%     }
+%     ]{#2}
+%     \addtolength{\hoffset}{-\myPDFoffset}
+%     \fancyheadoffset[r]{0mm}
+%     \fancyheadoffset[l]{0mm}
+% }
+
+\makeatletter
+
+\renewcommand{\@chap@pppage}{%
+  \clear@ppage
+  \thispagestyle{empty}%
+  \if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi
+  \null\vspace{9em}
+  \markboth{}{}%
+  {%\centering
+  \interlinepenalty \@M
+  \normalfont
+  \Huge \bfseries \appendixpagename\par}%
+  \if@dotoc@pp
+    \addappheadtotoc
+  \fi
+  \newpage
+  \if@twoside
+    \if@openright
+      \null
+      \thispagestyle{empty}%
+      \newpage
+    \fi
+  \fi
+  \if@tempswa
+    \twocolumn
+  \fi
+}
+
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \setcounter{equation}{0}
+  \gdef\thefigure{\@Alph\c@section.\arabic{figure}}%
+  \gdef\thetable{\@Alph\c@section.\arabic{table}}%
+  \gdef\thesection{\@Alph\c@section}%               %\gdef\thesection{\AppendixName~\@Alph\c@section}%
+  \@addtoreset{equation}{section}%
+  \gdef\theequation{\@Alph\c@section.\arabic{equation}}%
+  \fancyhead[LO]{\AppendixName~\thesection}
+  \fancyhead[RE]{\sc{\AppendixNames}}
+  %\def\baselinestretch{1}
+  %\renewcommand{\chaptermark}{\AppendixNames}
+  %\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+  \phantomsection
+  \appendixpage
+  \phantomsection
+  \addappheadtotoc
+}
+\makeatother

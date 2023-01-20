@@ -1,0 +1,27 @@
+\usepackage{tocloft}
+%extra commands
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\renewcommand\theparagraph{\thesubsubsection.\alph{paragraph}}
+
+\setlength{\cftchapindent}{0em}
+\setlength{\cftchapnumwidth}{1.3em}
+
+\setlength{\cftsecindent}{0em}
+\setlength{\cftsecnumwidth}{1.9em}
+
+\setlength{\cftsubsecindent}{1.9em}
+\setlength{\cftsubsecnumwidth}{2.6em}
+
+\setlength{\cftsubsubsecindent}{4.5em}
+\setlength{\cftsubsubsecnumwidth}{3.3em}
+
+\setlength{\cftparaindent}{7.8em}
+\setlength{\cftparanumwidth}{4.0em}
+
+
+% Paragraph behaving as subsubsubsection
+\usepackage[raggedright]{titlesec}
+% \titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\paragraph}[hang]{\itshape\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}

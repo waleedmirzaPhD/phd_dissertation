@@ -1,0 +1,66 @@
+\usepackage[chapter]{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{algpseudocode}
+%\usepackage{verbatim}
+
+% Environments
+\newenvironment{Abstract}
+  {
+    \clearpage\addcontentsline{toc}{chapter}{\abstractname}
+    \begin{center}
+    {\large \textsc{\abstractname}}\\[\baselineskip]
+    \begin{singlespace}
+    \large{\Title} \\[\baselineskip]
+    \end{singlespace}
+    \Author \\[\baselineskip]
+    \end{center}
+  }
+
+\newenvironment{Acknowledgements}
+  {
+    \clearpage\addcontentsline{toc}{chapter}{\acknowledgementname}
+    \begin{center}
+    {\large \textsc{\acknowledgementname}}\\[\baselineskip]
+    \end{center}
+  }
+
+% Style
+\appto\frontmatter{
+    \pagestyle{plain}
+    \pagenumbering{roman}
+}     
+\appto\mainmatter{
+    \pagestyle{fancy}
+}
+\appto\backmatter{
+    \pagestyle{fancy}
+}
+
+\theoremstyle{plain}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+%\newtheorem{Proposition}{Proposition}[chapter]
+%\theoremstyle{definition}
+%\newtheorem{Proof}{Proof}[chapter]
+
+%\floatstyle{boxed}
+%\newfloat{Box}{tbp}{bux}[chapter]
+
+
+\usepackage{mdframed}
+
+\newmdenv[
+bottomline =false,
+rightline  =false,
+topline    =false,
+leftmargin =1.5em,
+rightmargin=-1em,
+usetwoside =false
+]{publication}
+
+\newcommand\Publication[2]{\noindent\hspace{-0.2em}\emph{#1}
+\begin{publication}#2\end{publication}
+}
+
+
